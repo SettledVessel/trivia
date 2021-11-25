@@ -1,4 +1,4 @@
-#inports########################################################################
+#imports########################################################################
 import time
 import os
 score = 0
@@ -7,6 +7,7 @@ print("\033[1;31;40mHello, please enter your UserName?")
 userName = input("\033[1;37;40m")
 #functions######################################################################
 def next():
+    time.sleep(2)
     nex = input("\033[1;32;40mPress Enter To Continue")
     if nex == '':
         pass
@@ -18,7 +19,6 @@ def clearConsole():
 #start of topic 1###############################################################
 clearConsole()
 print(f"\033[1;31;40mOkay {userName} let's get started, our first topic is US World History")
-time.sleep(3)
 next()
 #question 1#####################################################################
 clearConsole()
@@ -33,13 +33,12 @@ elif question1 == '5371':
     pass
 else:
     print("\033[1;31;40m\nWrong, the first US president was George Washington")
-time.sleep(3)
 next()
 #question 2#####################################################################
 clearConsole()
 print("\033[1;31;40m                                               Topic 1 Qestion 2")####
 time.sleep(2)
-print('\033[1;31;40m\nWhat year did the US declare independence')
+print('\033[1;31;40mWhat year did the US declare independence')
 question2 = input('\033[1;37;40m')
 
 if question2 == '1776':
@@ -54,7 +53,7 @@ next()
 clearConsole()
 print("\033[1;31;40m                                               Topic 1 Qestion 3")
 time.sleep(2)
-print("\033[1;31;40m\nWhat year did the US enter WWII")
+print("\033[1;31;40mWhat year did the US enter WWII")
 question3 = input("\033[1;37;40m")
 
 if question3 == "1941":
@@ -70,13 +69,12 @@ clearConsole()
 print("\033[1;31;40mOkay thats enough of US history new topic time, and the new topic is\n\ndrumroll please")
 time.sleep(4)
 print("\033[1;33;40m\n\nMovies!")
-time.sleep(2)
 next()
 #topic 2 question 1#############################################################
 clearConsole()
-print("                                                            Topic 2 Qestion 1")
+print("\033[1;31;40m                                               Topic 2 Qestion 1")
 time.sleep(2)
-print('\033[1;31;40m\nWhat is the highest earning movie of all time')
+print('\033[1;31;40mWhat is the highest earning movie of all time')
 nq1 = input("\033[1;37;40m")
 
 if nq1.lower() == 'avatar':
@@ -86,19 +84,22 @@ if nq1.lower() == 'avatar':
     score += 10
 else:
     print("Wrong, it's avatar")
-
-
-print(f"{userName}Your final score is {score}")
+next()
 #Topic 2 question 2#############################################################
 
 
-#End##########################################################################33
-print("Would you like to save your score? (y/n)")
+#End############################################################################
+print(f"{userName} Your final score is {score}")
+time.sleep(2)
+print("\nWould you like to save your score? (y/n)")
 sav = input("")
 
 if sav == "y":
-    pass
+    with open("store.txt", "a") as f:
+        print(f"{userName}:{score}", file=f)
+elif sav == "":
+    print("You must enter y or n")
 else:
     print("Thank you for playing")
-    time.sleep(5)
+    time.sleep(3)
     exit()
