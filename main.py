@@ -68,17 +68,37 @@ next()
 clearConsole()
 #topic 2########################################################################
 print("\033[1;31;40mOkay thats enough of US history new topic time, and the new topic is\n\ndrumroll please")
-time.sleep(3)
+time.sleep(4)
 print("\033[1;33;40m\n\nMovies!")
-
-#topic 2 question 1
+time.sleep(2)
+next()
+#topic 2 question 1#############################################################
 clearConsole()
 print("                                                            Topic 2 Qestion 1")
 time.sleep(2)
-print('\033[1;31;40m\nOkay our first question for this new topic is what is the higest earning movie to date')
+print('\033[1;31;40m\nWhat is the highest earning movie of all time')
 nq1 = input("\033[1;37;40m")
 
 if nq1.lower() == 'avatar':
     print("\033[1;31;40mCorrect! Avengers End Game is th....")
     time.sleep(3)
-    print("\033[1;31;40mWait its Avatar!?!? I thought it was endgame")
+    print("\033[1;31;40mWait its Avatar!?!? I thought it was endgame +10 points")
+    score += 10
+else:
+    print("Wrong, it's avatar")
+
+
+print(f"{userName}Your final score is {score}")
+#Topic 2 question 2#############################################################
+
+
+#End##########################################################################33
+print("Would you like to save your score? (y/n)")
+sav = input("")
+
+if sav == "y":
+    pass
+else:
+    print("Thank you for playing")
+    time.sleep(5)
+    exit()
