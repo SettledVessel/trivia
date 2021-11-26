@@ -86,8 +86,18 @@ else:
     print("Wrong, it's avatar")
 next()
 #Topic 2 question 2#############################################################
+clearConsole()
+print("\033[1;31;40m                                               Topic 2 Qestion 2")
+time.sleep(2)
+print('\033[1;31;40mDid neo take the red pill or the blue pill in the Matrix')
+nq2 = input("")
 
-
+if nq2.lower() == 'red' or 'red pill' or 'the red pill':
+    print("\033[1;31;40mCorrect neo took the red pill +5 points")
+    score += 10
+else:
+    print("Incorrect, neo took the red pill not the blue")
+next()
 #End############################################################################
 print(f"{userName} Your final score is {score}")
 time.sleep(2)
@@ -103,3 +113,4 @@ else:
     print("Thank you for playing")
     time.sleep(3)
     exit()
+
